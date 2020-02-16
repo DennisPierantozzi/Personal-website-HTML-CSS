@@ -1,0 +1,22 @@
+body {
+	margin: 0;
+	padding:0;
+	border: border-box;
+}
+main {
+	height:100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#leftside, #rightside {
+	height: 80vh;
+	width: 40vw;
+	border: 2px solid black;
+}
+.left{
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
+}
