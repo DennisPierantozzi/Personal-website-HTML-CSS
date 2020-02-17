@@ -1,3 +1,18 @@
+@font-face {
+	src: url(font/Lato-Medium.ttf);
+	font-family: 'Lato-Medium';
+}
+@font-face {
+	src: url(font/Lato-Bold.ttf);
+	font-family: 'Lato-Bold';
+}
+/* colors
+#2b3138
+#202329
+#fed32c
+#cdcfd3
+#020202
+*/
 body {
 	margin: 0;
 	padding:0;
@@ -8,15 +23,44 @@ main {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	background-color: #020202;
 }
 #leftside, #rightside {
 	height: 80vh;
 	width: 40vw;
-	border: 2px solid black;
 }
 .left{
 	display: flex;
 	flex-direction: column;
-	justify-content: start;
+	justify-content: center;
 	align-items: center;
+	background-color: #020202;
+-webkit-box-shadow: 0px 3px 21px -1px rgba(117,117,117,1);
+-moz-box-shadow: 0px 3px 21px -1px rgba(117,117,117,1);
+box-shadow: 0px 3px 21px -1px rgba(117,117,117,1);
 }
+#title {
+	margin: 2vh;
+	font-size: 2em;
+	font-family: 'Lato-Bold';
+	color: #5c5c5c;
+}
+.left p{
+	padding-right: 20px;
+	padding-left: 20px;
+	font-family: 'Lato-Medium';
+	color: #cdcfd3;
+}
+.social {
+	display: flex;
+	flex-direction: row;
+	margin-top: 3vh;
+}
+.social a{
+	color: #2b3138;
+	font-size: 20px;
+}
+.link{
+	margin-left: 2vw;
+}
+/* for mobile no flex in main, no width in sides */
