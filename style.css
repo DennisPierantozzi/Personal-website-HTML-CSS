@@ -17,50 +17,110 @@ body {
 	margin: 0;
 	padding:0;
 	border: border-box;
+	font-family: 'Lato-Medium', sans-serif;
+	color: #fff;
 }
 main {
 	height:100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #020202;
+	background-image: linear-gradient(to right, rgba(0,0,0,0.80), rgba(10, 10, 10, 0.80)),  url(images/back.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 #leftside, #rightside {
 	height: 80vh;
 	width: 40vw;
 }
+/*left side style*/
 .left{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
-	background-color: #020202;
--webkit-box-shadow: 0px 3px 21px -1px rgba(117,117,117,1);
--moz-box-shadow: 0px 3px 21px -1px rgba(117,117,117,1);
-box-shadow: 0px 3px 21px -1px rgba(117,117,117,1);
 }
-#title {
-	margin: 2vh;
-	font-size: 2em;
-	font-family: 'Lato-Bold';
-	color: #5c5c5c;
-}
-.left p{
-	padding-right: 20px;
-	padding-left: 20px;
+.caption {
+	width: 30vw;
 	font-family: 'Lato-Medium';
 	color: #cdcfd3;
+	text-align: justify;
 }
 .social {
 	display: flex;
 	flex-direction: row;
 	margin-top: 3vh;
-}
-.social a{
-	color: #2b3138;
-	font-size: 20px;
+	margin-bottom: 3vh;
 }
 .link{
+	color: #555;
+	font-size: 20px;
+	text-decoration: none;
+}
+.link:hover {
+	color: #940706;
+}
+.link-margin{
 	margin-left: 2vw;
 }
+/* right side style */
+.right {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: end;
+	grid-gap: 1rem;
+}
+.box {
+	height:40vh;
+	background-color: rgb(10, 10, 10);
+	border: solid 3px #940706;
+	border-radius: 5px;
+	color: #6b6b6b;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+.box-front {
+	backface-visibility: hidden;
+	transition:  linear 0.7s;
+	transform: rotateY(0deg);
+	position: absolute;
+	font-size: 25px;
+	font-family: 'Lato-Bold', sans-serif;
+}
+.box-back {
+	position: absolute;
+	backface-visibility: hidden;
+	transition:  linear 0.7s;
+	transform: rotateY(180deg);
+	font-size: 16px;
+	padding: 1em;
+	line-height: 1.5em;
+	font-family: 'Lato-Medium', sans-serif;
+}
+.box:hover > .box-front{
+	transform: rotateY(-180deg);
+	color: #fff;
+}
+.box:hover > .box-back{
+	transform: rotateY(0deg);
+	color: #fff;
+}
 /* for mobile no flex in main, no width in sides */
+
+@media only screen and (max-width: 1024px) {
+	main{
+		display: inline-block;
+		height: auto;
+	}
+	#leftside, #rightside {
+		width: 100vw;
+		height: auto;
+	}
+	.right {
+		display: inline;
+	}
+	.left {
+		align-items: center;
+	}
+}
